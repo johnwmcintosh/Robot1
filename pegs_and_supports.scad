@@ -1,11 +1,9 @@
 $fa=1;
-$fs=0.4;
+$fs=0.01;
 
 ////////////////////////////////////////////////
-module support_peg() {
-    cylinder(h = .75, r = .2);
-    //translate([0,0,.3])
-    //cylinder(h = .5, r=.4);
+module support_peg(h = .75, r = .2) {
+    cylinder(h = h, r = r);
 }
 //translate([.4,.7,-2.1 ])
 //support_peg();

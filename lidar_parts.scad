@@ -1,5 +1,5 @@
 $fa=1;
-$fs=0.4;
+$fs=0.01;
 
 use <pegs_and_supports.scad>
 
@@ -33,14 +33,14 @@ module lidar_tray() {
         
         // solitary peg
         translate([lidar_tray_width / 2, lidar_tray_length - 1, -.1])
-        cylinder(h=.4, r=.2);
+        support_peg(h=.4, r=.2);
         
         // peg pair
         translate([.2 + lidar_front_pegs, .75, -.1])
-        cylinder(h=.4, r=.2);
+        support_peg(h=.4, r=.2);
        
         translate([.4, .75, -.1])
-        cylinder(h=.4, r=.2);
+        support_peg(h=.4, r=.2);
     }
     
     translate([.4, .75, -1.5])

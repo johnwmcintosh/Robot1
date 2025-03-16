@@ -2,6 +2,8 @@ use <tobsun_parts.scad>
 use <lidar_parts.scad>
 use <engine_holders.scad>
 use <pegs_and_supports.scad>
+use <breadboard_support.scad>
+use <motor_controller.scad>
 
 main_box_width = 6.5;
 main_box_length = 11.5;
@@ -37,7 +39,7 @@ difference() {
     cylinder(h=2, r=.5);
 
     // mid shelf wire cutout
-    translate([.5, main_box_length * .75, main_box_height - .2])
+    translate([.5, main_box_length * .55, main_box_height - .2])
     cube([main_box_width - 1, .5, .6]);
     
     // tobsun chassis shelf cutout
@@ -57,6 +59,11 @@ lidar_tray();
 // back strap
 translate([0, 0,  main_box_height + 1])
 cube([main_box_width, .2, 1]);
+
+// breadboard
+translate([main_box_width / 2, 9.25, 4.25])
+rotate([0,0,90])
+breadboard_support();
 
 // lower level
 difference() {
@@ -81,6 +88,9 @@ difference() {
     translate([0,8, 0])
     engine_holder_cutouts();
 }
+translate([main_box_width / 2,main_box_length / 2,.3])
+rotate([0,0,180])
+mc();
 
 //difference() {
 //
