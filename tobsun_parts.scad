@@ -8,12 +8,10 @@ tobsun_shelf_height = 1.3;
 
 module tobsun_tray() {
     difference() {
-        color("blue")
         translate([0, 0, 0])
         cube([tobsun_shelf_width, tobsun_shelf_length, tobsun_shelf_height]);
         
         // cut out
-        color("blue")
         translate([.1, -.2, .2])
         cube([tobsun_shelf_width -.2, tobsun_shelf_length, tobsun_shelf_height +.2]);
         

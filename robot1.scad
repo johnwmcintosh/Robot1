@@ -4,6 +4,7 @@ use <engine_holders.scad>
 use <pegs_and_supports.scad>
 use <breadboard_support.scad>
 use <motor_controller.scad>
+include <RP5.scad>
 
 main_box_width = 6.5;
 main_box_length = 11.5;
@@ -38,15 +39,22 @@ difference() {
     translate([main_box_width/2, main_box_length / 2 + .5, main_box_height * 2 - 1])
     cylinder(h=2, r=.5);
 
-    // mid shelf wire cutout
+    // mid shelf large wire cutout
     translate([.5, main_box_length * .55, main_box_height - .2])
     cube([main_box_width - 1, .5, .6]);
     
+    // mid shelf small wire cutout 1
+    translate([main_box_width - .75, main_box_length - 2.8, main_box_height - .3 ])
+    cube([.25, 1, .6]);
+    
+    // mid shelf small wire cutout 2
+    translate([.5, main_box_length - 2.8, main_box_height - .3 ])
+    cube([.25, 1, .6]);
+
     // tobsun chassis shelf cutout
     translate([1.8,2.3, main_box_height + 1.7])
     tobsun_chassis_cutout();
 }
-
 
 // tobsub tray    
 translate([1.8,2.7, main_box_height + 1.7])
@@ -64,6 +72,11 @@ cube([main_box_width, .2, 1]);
 translate([main_box_width / 2, 9.25, 4.25])
 rotate([0,0,90])
 breadboard_support();
+
+// rapberry pi 5
+translate([main_box_width / 2, main_box_length / 2, rp5_height / 2 + .4])
+color("red")
+rp5();
 
 // lower level
 difference() {
@@ -88,7 +101,10 @@ difference() {
     translate([0,8, 0])
     engine_holder_cutouts();
 }
-translate([main_box_width / 2,main_box_length / 2,.3])
+
+// motor controller
+translate([main_box_width / 2,main_box_length / 3 + 1, 3.5])
+color("red")
 rotate([0,0,180])
 mc();
 

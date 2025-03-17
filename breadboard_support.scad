@@ -10,9 +10,8 @@ peg_cutout_offset = .25;
 
 module breadboard_support() {
     difference() {
+        color("green")
         cube([breadboard_width + space_around, breadboard_length + space_around, .25],center = true);
-        //color("green")
-        //cube([breadboard_width, breadboard_length, 1], center = true);
 
         translate(
         [

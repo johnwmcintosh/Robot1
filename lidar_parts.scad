@@ -15,6 +15,7 @@ lidar_screw_radius = .1;
 
 module lidar_tray() {
     difference() {
+        color("green")
         cube([lidar_tray_width, lidar_tray_length, lidar_tray_height]);
         
         // screw pair
