@@ -108,29 +108,7 @@ color("red")
 rotate([0,0,180])
 mc();
 
-//difference() {
-//
-//    // interior shelf
-//    translate([0,3.2,1.5])
-//    cube([6.5,8.3, .2]);
-//
-//    // battery left cut out
-//    translate([2,0,.2])
-//    cube([.2, 4, 2.7]);
-//
-//    // battery right cut out
-//    translate([4.2,0,.2])
-//    cube([.2, 4, 2.7]);
-//
-//    // cross cut out 1
-//    translate([.5,5.8,1.35])
-//    cube([5.5,.2, .5]);
-//
-//    // cross cut out 2
-//    translate([.5,9.4,1.35])
-//    cube([5.5,.2, .5]);
-// }
- 
+// t-support 
  translate([10,0,0])
  scale([.1,.1,.1])
  support_piece();
