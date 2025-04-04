@@ -4,6 +4,7 @@ use <engine_holders.scad>
 use <pegs_and_supports.scad>
 use <breadboard_support.scad>
 use <motor_controller.scad>
+use <caster_platform.scad>
 include <RP5.scad>
 
 main_box_width = 6.5;
@@ -74,9 +75,9 @@ rotate([0,0,90])
 breadboard_support();
 
 // rapberry pi 5
-translate([main_box_width / 2, main_box_length / 2, rp5_height / 2 + .4])
-color("red")
-rp5();
+//translate([main_box_width / 2, main_box_length / 2, 10 / 2 + .4])
+//scale([.01, .01, .01])
+//rp5();
 
 // lower level
 difference() {
@@ -112,3 +113,7 @@ mc();
  translate([10,0,0])
  scale([.1,.1,.1])
  support_piece();
+
+translate([3, 1 ,-.4])
+rotate([180, 0, 180])
+caster_platform();
